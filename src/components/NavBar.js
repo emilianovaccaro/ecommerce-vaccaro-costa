@@ -1,5 +1,6 @@
 import React from 'react';
-import CartWidget from './subcomp/CartWidget'
+import CartWidget from './CartWidget';
+import Header from './Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
@@ -28,6 +29,7 @@ function NavBar() {
                 </div>
             </div>
         </nav>
+        <Header greeting="Shop With Us"/>
     </>
   )
 }
