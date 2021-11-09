@@ -1,20 +1,32 @@
 import React from "react";
-import Center from './Center';
+import ProductCard from "./ProductCard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
-function ItemListContainer(props){
-  return <>
-    <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder"  id="h1white">{props.greeting}</h1>
-                <p class="lead fw-normal text-white-50 mb-0">123123</p>
-            </div>
-        </div>
-    </header>
-    <Center />
-  </>
+const ItemListContainer = () => {
+  return( 
+    <>
+      <div>
+      <section class="py-5">
+              <div class="container px-4 px-lg-5 mt-5">
+                  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                      <ProductCard name="Short" price="$80.00" image="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"/>
+                      <ProductCard name="Pantalon" price="$80.00" image="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"/>
+                      <ProductCard name="Remera de Tinelli" price="$80.00" image="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"/>
+                      <ProductCard name="Short" price="$80.00" image="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"/>
+                      <ProductCard name="Buzo Pro" price="$80.00" image="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"/>
+                      <ProductCard name="Buzo Flow" price="$80.00" image="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"/>
+                      <ProductCard name="Buzo Pro Green" price="$80.00" image="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"/>
+                      <ProductCard name="Remera Messi 30" price="$80.00" image="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"/>
+                      <ProductCard name="Short Messi 30" price="$80.00" image="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"/>
+                      <ProductCard name="Medias de Ruggeri" price="$80.00" image="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"/>
+                  </div>
+              </div>
+          </section>
+      </div>
+    </>
+  )
 };
+
 
 export default ItemListContainer;
