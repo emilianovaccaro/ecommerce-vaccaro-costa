@@ -1,24 +1,24 @@
 import React, {useState, useEffect} from "react";
-import ItemList from './ItemList';
+import ItemDetail from './ItemDetail';
 import {data} from './data/data';
 
 
 const ItemListContainer = () => {
-  const [items, setItems] = useState([]);
+  const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(true);
-  console.log(items, loading);
+  console.log(item, loading);
 
 
   const getFetch = new Promise((resolve) => {
     setTimeout(() => {
-      resolve(data)
+      resolve(data[4])
     }, 2000)
   });
 
   useEffect(() => {
     getFetch
     .then((res) => {
-      setItems(res)
+      setItem(res)
       setLoading(false)
     })
     .catch((err)=>{console.log(err)})
@@ -34,7 +34,7 @@ const ItemListContainer = () => {
   
   return (    
   <> 
-   <ItemList items={items} />
+   <ItemDetail item={item} />
   </>
   );
 }

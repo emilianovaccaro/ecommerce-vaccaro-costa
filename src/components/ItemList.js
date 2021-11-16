@@ -1,12 +1,12 @@
 import React from "react";
 import ItemC from "./ItemC";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { ProductsContainer } from './styledComponents';
 
 function ItemList({items}) {
   return (
-      <div>
+    <ProductsContainer>
           {items.map(item=> <ItemC item={item} /> )}
-      </div>
+    </ProductsContainer>
   )
 }
 
