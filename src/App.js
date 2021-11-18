@@ -1,19 +1,22 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import Footer from './components/Footer';
-  
-//las propiedades son xxx="" nombre="" etc=""
+
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
-      <ItemDetailContainer />
-      {/*       <ItemListContainer /> */}
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/category/:catId' element={<ItemListContainer/>}/>
+        <Route path='/item/:productId' element={<ItemDetailContainer/>}/>
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 };
 

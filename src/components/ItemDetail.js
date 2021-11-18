@@ -8,15 +8,15 @@ const ItemDetail = ({ item }) => {
       <DetailContainer>
         <WrapperDetail>
           <ImgContainer>
-            <ImageDetail src={item.img}/>
+            <ImageDetail src={item.image}/>
           </ImgContainer>
           <InfoContainer>
             <Title>{item.name}</Title>
             <Desc>{item.decription}</Desc>
             <Price>$ {item.price}</Price>
-            <Desc>quedan {item.stock} unidades</Desc>
+            <Desc>quedan {item.stock} (fake store api no tiene stock, hay que poner uno propio luego) unidades</Desc>
           </InfoContainer>
-          <ItemCount stock={item.stock}/>
+          <ItemCount stock={5}/>
         </WrapperDetail>
       </DetailContainer>
     </>
