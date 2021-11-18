@@ -6,7 +6,7 @@ export const data = [
     description:'Agua fresca papuuu',
     price: 45,
     categoryId: 2,
-    img: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316114/BodegasDelSur/01_1619706181.webp"
+    image: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316114/BodegasDelSur/01_1619706181.webp"
     ,
   },
   {
@@ -16,7 +16,7 @@ export const data = [
     description:'Agua fresca papuuu',
     price: 140,
     categoryId: 2,
-    img: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316114/BodegasDelSur/01_1619706076.webp"
+    image: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316114/BodegasDelSur/01_1619706076.webp"
     ,
   },
   {
@@ -26,7 +26,7 @@ export const data = [
     description:'Para proponerle casamiento a tu novia',
     price: 575,
     categoryId: 5,
-    img: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316095/BodegasDelSur/01_1605540337.jpg"
+    image: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316095/BodegasDelSur/01_1605540337.jpg"
   },
   {
     id: 78,
@@ -35,7 +35,7 @@ export const data = [
     description:'Ojo no te manches',
     price: 522,
     categoryId: 5,
-    img: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316095/BodegasDelSur/01_1605540337.jpg"
+    image: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316095/BodegasDelSur/01_1605540337.jpg"
   },
   {
     id: 79,
@@ -44,7 +44,7 @@ export const data = [
     description:'Pinche pendejo, te manchaste wey',
     price: 300,
     categoryId: 5,
-    img: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316095/BodegasDelSur/01_1605540337.jpg"
+    image: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316095/BodegasDelSur/01_1605540337.jpg"
   },
   {
     id: 80,
@@ -53,6 +53,6 @@ export const data = [
     description:'Te borre el stock, no te manches mas changuito/a',
     price: 500,
     categoryId: 5,
-    img: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316095/BodegasDelSur/01_1605540337.jpg"
+    image: "https://res.cloudinary.com/bodegas-del-sur/image/upload/v1631316095/BodegasDelSur/01_1605540337.jpg"
   }
 ];

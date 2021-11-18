@@ -27,23 +27,25 @@ const ItemCount = ({stock}) => {
   };
 
 
-  if(stock <= 0){
-    return(
-      <div className="text-center"><span>Stock Agotado</span></div>
-    );
-  }else{
-    return(
-      <div className="text-center">
-        <button className="btn btn-outline-dark mt-auto" onClick={decrement}>-</button>
-        <span className="btn btn-outline">{quantity}</span>
-        <button className="btn btn-outline-dark mt-auto" onClick={increment}>+</button>
-
-        <div className="card-footer cardFooterItemCount pt-3 pb-0">
-          <button type="button" className="btn shadow-sm mainBtn addToCart"  onClick={onAdd}>Agregar</button>
+  return(
+    <div className="text-center">
+      {stock <= 0 
+        ? 
+        (<span>Stock Agotado</span>)
+        :
+        ( 
+        <div>
+          <button className="btn btn-outline-dark mt-auto" onClick={decrement}>-</button>
+            <span className="btn btn-outline">{quantity}</span>
+          <button className="btn btn-outline-dark mt-auto" onClick={increment}>+</button>
+          <div className="card-footer cardFooterItemCount pt-3 pb-0">
+            <button type="button" className="btn shadow-sm mainBtn addToCart"  onClick={onAdd}>Agregar</button>
+          </div>
         </div>
-      </div>
-    );
-  }
-}
+        )
+      }
+    </div>
+  )
+};
 
 export default ItemCount;

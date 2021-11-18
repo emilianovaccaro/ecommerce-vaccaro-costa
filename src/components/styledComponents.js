@@ -100,7 +100,8 @@ const Circle = styled.div`
 `;
 
 const Image = styled.img`
-    height: 75%;
+    width: 70%;
+    height: 70%;
     z-index: 2;
 `;
 
@@ -136,7 +137,7 @@ const ImgContainer = styled.div`
 
 const ImageDetail = styled.img`
     width: 100%;
-    height: 90vh;
+    height: 100%;
     object-fit: cover;
 `;
 

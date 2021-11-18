@@ -5,7 +5,7 @@ import { ProductsContainer } from './styledComponents';
 function ItemList({items}) {
   return (
     <ProductsContainer>
-          {items.map(item=> <ItemC item={item} /> )}
+      {items.map(item=> <ItemC item={item} /> )}
     </ProductsContainer>
   )
 }

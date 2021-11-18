@@ -1,41 +1,37 @@
 import React, {useState, useEffect} from "react";
+import { useParams } from 'react-router';
 import ItemList from './ItemList';
-import {data} from './data/data';
 
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  console.log(items, loading);
-
-
-  const getFetch = new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(data)
-    }, 2000)
-  });
+  const [isLoading, setIsLoading] = useState(true);
+  const { catId } = useParams("");
 
   useEffect(() => {
-    getFetch
-    .then((res) => {
-      setItems(res)
-      setLoading(false)
-    })
-    .catch((err)=>{console.log(err)})
-  });
+    fetch('https://fakestoreapi.com/products')
+      .then((response) => {
+        return response.json();
+      })
+      .then((item)=> {
+        const product = item.filter((item) => {
+          if(catId === undefined){return item;}
+          return item.category === catId;
+          })
+        setItems(product);
+        setIsLoading(false);
+      })
+      .catch((err) => {console.log(err)})
+      }, [catId]);
 
-  if(loading){
-    return(
-      <div>
-        <h2>loading...</h2>
-      </div>
-    )
-  };
-  
-  return (    
-  <> 
-   <ItemList items={items} />
-  </>
+  return(
+    <div>
+      {isLoading === true ? (
+        <h2>Cargando desde Fake Store API</h2>
+      ) 
+      : (   <ItemList items={items} />)
+      }
+    </div>
   );
 }
 

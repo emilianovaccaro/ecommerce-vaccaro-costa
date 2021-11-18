@@ -1,41 +1,33 @@
 import React, {useState, useEffect} from "react";
+import {useParams} from 'react-router';
 import ItemDetail from './ItemDetail';
-import {data} from './data/data';
-
 
 const ItemListContainer = () => {
   const [item, setItem] = useState([]);
-  const [loading, setLoading] = useState(true);
-  console.log(item, loading);
-
-
-  const getFetch = new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(data[4])
-    }, 2000)
-  });
+  const [isLoading, setIsLoading] = useState(true);
+  const { productId } = useParams();
 
   useEffect(() => {
-    getFetch
-    .then((res) => {
-      setItem(res)
-      setLoading(false)
+    fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then((product) => {
+      const prod = product.find(item => item.id === parseInt(productId))
+      setItem(prod);
+      setIsLoading(false)
     })
-    .catch((err)=>{console.log(err)})
-  });
+    .catch((err) => {console.log(err)})
+  }, [productId]);
 
-  if(loading){
-    return(
-      <div>
-        <h2>loading...</h2>
-      </div>
+  return(
+    <div>
+    {
+    isLoading === true ? (
+      <h2>Cargando desde Fake Store API</h2>
+    ) : (
+      <ItemDetail item={item} />
     )
-  };
-  
-  return (    
-  <> 
-   <ItemDetail item={item} />
-  </>
+  }
+    </div>
   );
 }
 
