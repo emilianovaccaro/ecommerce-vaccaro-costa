@@ -6,7 +6,7 @@ import { ProductContainer, Circle, Image, Info, Icon } from './styledComponents'
 
 function ItemC({ item }) {
   return (
-    <div key={item.id}>
+    <div>
     <ProductContainer>
         <Circle/>
         <Image src={item.image}/>

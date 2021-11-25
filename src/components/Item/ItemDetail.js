@@ -1,34 +1,57 @@
-import React from 'react';
-import { DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price } from './styledComponents';
+import React, { useState } from 'react';
+import { DetailContainer, WrapperDetail, ImgContainer, ProductAmountContainer, ImageDetail, InfoContainer, Title, Desc, Price } from './styledComponents';
 import ItemCount from '../ItemCounter/ItemCount';
+import { Link } from "react-router-dom";
+import { Button } from '@material-ui/core';
 
 const ItemDetail = ({ item }) => {
 
-  const onAdd=(quantity)=>{
-    console.log(`add  ${quantity} products`);
-    console.log("id", item.id);
-  }
+  let {id, image, title, description, price, category} = item;
+
+
+  const [addProduct, setAddProduct] = useState(0);
+
+  const updateQty = (quantity) => {
+    setAddProduct(addProduct + quantity);
+  };
+
+  console.log(addProduct);
 
 
   return (
-    <>
-    <div key={item.id}>
+    <div key={id}>
       <DetailContainer>
         <WrapperDetail>
           <ImgContainer>
-            <ImageDetail src={item.image}/>
+            <ImageDetail src={image}/>
           </ImgContainer>
           <InfoContainer>
-            <Title>{item.title}</Title>
-            <p>{item.category}</p>
-            <Desc>{item.description}</Desc>
-            <Price>$ {item.price}</Price>
+            <Title>{title}</Title>
+            <p>{category}</p>
+            <Desc>{description}</Desc>
+            <Price>$ {price}</Price>
           </InfoContainer>
-          <ItemCount stock={10} initial={1} onAdd={onAdd}/>
+          {addProduct >= 1 ? (
+            <ProductAmountContainer>
+              <Link to="/cart">
+                <Button variant="contained" color="primary">Cart</Button>
+              </Link>
+              <Link to="/">
+                <Button variant="contained" color="secondary">Home</Button>
+              </Link>
+            </ProductAmountContainer>
+          ) : (
+            <ItemCount 
+              item={item}
+              stock={10}
+              initial={0}
+              updateQty={updateQty}
+            />
+          )}
+          
         </WrapperDetail>
       </DetailContainer>
     </div>
-    </>
   )
 };
 
