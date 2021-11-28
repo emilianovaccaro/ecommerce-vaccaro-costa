@@ -1,37 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../Cart/CartContext';
 import { DetailContainer, WrapperDetail, ImgContainer, ProductAmountContainer, ImageDetail, InfoContainer, Title, Desc, Price } from './styledComponents';
 import ItemCount from '../ItemCounter/ItemCount';
 import { Link } from "react-router-dom";
 import { Button } from '@material-ui/core';
 
 const ItemDetail = ({ item }) => {
+  const [quantity, setQuantity] = useState(0);
+  const [changeBtn, setChangeBtn] = useState(true);
+  const prodContext = useContext(CartContext);
 
-  let {id, image, title, description, price, category} = item;
-
-
-  const [addProduct, setAddProduct] = useState(0);
-
-  const updateQty = (quantity) => {
-    setAddProduct(addProduct + quantity);
+  const onAdd = (quantity) => {
+    setQuantity(quantity);
+    console.log(quantity);
+    prodContext.addItem(item, quantity);
+    setChangeBtn(false);
   };
 
-  console.log(addProduct);
-
-
   return (
-    <div key={id}>
+    <div key={item.id}>
       <DetailContainer>
         <WrapperDetail>
           <ImgContainer>
-            <ImageDetail src={image}/>
+            <ImageDetail src={item.image}/>
           </ImgContainer>
           <InfoContainer>
-            <Title>{title}</Title>
-            <p>{category}</p>
-            <Desc>{description}</Desc>
-            <Price>$ {price}</Price>
+            <Title>{item.title}</Title>
+            <p>{item.category}</p>
+            <Desc>{item.description}</Desc>
+            <Price>$ {item.price}</Price>
           </InfoContainer>
-          {addProduct >= 1 ? (
+          {!changeBtn ? (
             <ProductAmountContainer>
               <Link to="/cart">
                 <Button variant="contained" color="primary">Cart</Button>
@@ -42,10 +41,9 @@ const ItemDetail = ({ item }) => {
             </ProductAmountContainer>
           ) : (
             <ItemCount 
-              item={item}
               stock={10}
               initial={0}
-              updateQty={updateQty}
+              onAdd={onAdd}
             />
           )}
           

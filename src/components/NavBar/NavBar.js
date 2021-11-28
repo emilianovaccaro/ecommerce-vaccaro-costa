@@ -15,6 +15,8 @@ function NavBar() {
 				<Center>
 					<Link to='/category/jewelery' style={{color:"white"}}><MenuItem>Jewelry</MenuItem></Link>
 					<Link to='/category/electronics'  style={{color:"white"}}><MenuItem>Electronic</MenuItem></Link>
+					<Link to="/category/women's clothing"  style={{color:"white"}}><MenuItem>WClothing</MenuItem></Link>
+					<Link to="/category/men's clothing"  style={{color:"white"}}><MenuItem>MClothing</MenuItem></Link>
 				</Center>
 				<Right>
 					<Link to='/cart'><MenuItem><CartWidget /></MenuItem></Link>
