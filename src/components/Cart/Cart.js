@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext }  from "./CartContext";
-import { WrapperCart, TitleCart, ContentCart, Top, TopButton, TopText,Product, ProductDetail, ImageCart, Details, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice } from './styledComponents';
+import { WrapperCart, TitleCart, ContentCart, Top, TopButton, TopText,Product, ProductDetail, ImageCart, Details, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice,
+ Summary, Button, Bottom, SummaryTitle, SummaryItemPrice, SummaryItem, SummaryItemText } from './styledComponents';
 
 const Cart = () => {
 const prodContext = useContext(CartContext);
@@ -38,12 +39,26 @@ return (
               <ProductAmount>{item.qtyItem} item(s)</ProductAmount>
             </ProductAmountContainer>
               <ProductPrice>$ {item.priceItem} each</ProductPrice>
+              <ProductPrice>$ {prodContext.totalItemPrice(item.idItem)} total for product</ProductPrice>
           </PriceDetail>
         </Product>
         )
         : 
         <Link to="/"><TitleCart>Check available products</TitleCart></Link>
       }
+      <Bottom>
+        { prodContext.cartList.length > 0 ? (
+        <Summary>
+          <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            <SummaryItem type="total">
+              <SummaryItemText>Total</SummaryItemText>
+              <SummaryItemPrice>$ {prodContext.fullCartPrice()}</SummaryItemPrice>
+            </SummaryItem>
+          <Button>$ Checkout {prodContext.fullCartPrice()}</Button>
+        </Summary> 
+        ) : (<div></div>)
+        }
+      </Bottom>
     </ContentCart>
   </WrapperCart>
 );

@@ -12,9 +12,10 @@ const ItemDetail = ({ item }) => {
 
   const onAdd = (quantity) => {
     setQuantity(quantity);
-    console.log(quantity);
-    prodContext.addItem(item, quantity);
-    setChangeBtn(false);
+    if(quantity > 0){
+      prodContext.addItem(item, quantity);
+      setChangeBtn(false);
+    }
   };
 
   return (
