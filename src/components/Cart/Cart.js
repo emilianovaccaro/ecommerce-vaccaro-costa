@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext }  from "./CartContext";
+import { CartContext }  from "../Context/CartContext";
 import { WrapperCart, TitleCart, ContentCart, Top, TopButton, TopText,Product, ProductDetail, ImageCart, Details, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice,
  Summary, Button, Bottom, SummaryTitle, SummaryItemPrice, SummaryItem, SummaryItemText } from './styledComponents';
 

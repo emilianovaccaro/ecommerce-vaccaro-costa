@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { CartContext } from '../Cart/CartContext';
+import { CartContext } from '../Context/CartContext';
 import { DetailContainer, WrapperDetail, ImgContainer, ProductAmountContainer, ImageDetail, InfoContainer, Title, Desc, Price } from './styledComponents';
 import ItemCount from '../ItemCounter/ItemCount';
 import { Link } from "react-router-dom";
@@ -42,7 +42,7 @@ const ItemDetail = ({ item }) => {
             </ProductAmountContainer>
           ) : (
             <ItemCount 
-              stock={10}
+              stock={item.stock}
               initial={0}
               onAdd={onAdd}
             />

@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import { Badge } from "@material-ui/core";
 import { Icon } from './styledComponents';
 import { ShoppingCartOutlined } from "@material-ui/icons";
-import {CartContext} from '../Cart/CartContext';
+import { CartContext } from '../Context/CartContext';
 
 const CartWidget = () => {
   const badge = useContext(CartContext);
