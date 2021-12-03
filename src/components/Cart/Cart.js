@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext }  from "../Context/CartContext";
-import { WrapperCart, TitleCart, ContentCart, Top, TopButton, TopText,Product, ProductDetail, ImageCart, Details, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice,
- Summary, Button, Bottom, SummaryTitle, SummaryItemPrice, SummaryItem, SummaryItemText } from './styledComponents';
+import BuyerForm from '../BuyerForm/BuyerForm';
+import { WrapperCart, TitleCart, ContentCart, Top, TopButton, TopText,Product, ProductDetail, ImageCart, Details, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice} from './styledComponents';
 
 const Cart = () => {
 const prodContext = useContext(CartContext);
@@ -46,19 +46,9 @@ return (
         : 
         <Link to="/"><TitleCart>Check available products</TitleCart></Link>
       }
-      <Bottom>
-        { prodContext.cartList.length > 0 ? (
-        <Summary>
-          <SummaryTitle>ORDER SUMMARY</SummaryTitle>
-            <SummaryItem type="total">
-              <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ {prodContext.fullCartPrice()}</SummaryItemPrice>
-            </SummaryItem>
-          <Button>$ Checkout {prodContext.fullCartPrice()}</Button>
-        </Summary> 
-        ) : (<div></div>)
-        }
-      </Bottom>
+      {/* se agrega form con inputs para el comprador */}
+      <BuyerForm/>
+      
     </ContentCart>
   </WrapperCart>
 );

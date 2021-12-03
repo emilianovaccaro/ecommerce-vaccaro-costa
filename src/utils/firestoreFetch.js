@@ -11,9 +11,9 @@ export const firestoreFetch = async (catId) => {
   }
 
   const querySnapshot = await getDocs(cate);
-  const productosFirestore = querySnapshot.docs.map(doc => ({
-    id: doc.id,
-    ...doc.data()
+  const productosFirestore = querySnapshot.docs.map(docu => ({
+    id: docu.id,
+    ...docu.data()
   }));
   return productosFirestore;
   };

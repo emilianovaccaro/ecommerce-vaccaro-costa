@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from 'react-router';
 import ItemDetail from '../Item/ItemDetail';
-import { productosOne, firestoreFetch } from '../../utils/firestoreFetch';
+import { productosOne, /* firestoreFetch */ } from '../../utils/firestoreFetch';
 import CircularProgress from "@material-ui/core/CircularProgress";
 import {Center} from './styledComponents';
 
@@ -18,8 +18,9 @@ const ItemListContainer = () => {
     })
     .catch(err => console.log(err))
   }, [productId]);
+
   
-  //SEGUNDA OPCION USANDO FIND DENTRO DEL ARRAY DE OBJETOS COMPLETO (NO NOTO DIFERENCIA EN LA VELOCIDAD DE CARGA), AMBAS SON FUNCIONALES.
+  //USANDO FIND DENTRO DEL ARRAY DE OBJETOS COMPLETO
       /* useEffect(() => {
           firestoreFetch()
             .then((res) => {
@@ -30,7 +31,6 @@ const ItemListContainer = () => {
             .catch(err => console.log(err))
           }, [productId]);
    */
-  
 
   return(
     <div>

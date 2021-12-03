@@ -10,6 +10,7 @@ const ItemListContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { catId } = useParams();
 
+  //didUpdate
   useEffect(() => {
     firestoreFetch(catId)
     .then((res) => {
@@ -18,6 +19,13 @@ const ItemListContainer = () => {
     })
     .catch(err => console.log(err))
   }, [catId]);
+
+  //unmount
+  useEffect(() => {
+    return (() => {
+        setItems([]);
+    })
+  }, []);
 
   return(
     <div>
