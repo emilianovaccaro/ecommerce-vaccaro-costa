@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import Input from '@material-ui/core/Input';
 import { Summary, Button, Bottom, SummaryTitle, SummaryItemPrice, SummaryItem, SummaryItemText } from './styledComponents';
 import { CartContext }  from "../Context/CartContext";
 import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
@@ -54,9 +55,9 @@ const BuyerForm = () => {
     { prodContext.cartList.length > 0 ? (
     <Summary>
       <form>
-        <input type="text" id="name" placeholder="fullname" onChange={event => setNameBuyer(event.target.value)}></input>
-        <input type="number" id="phone" placeholder="phone" onChange={event => setPhoneBuyer(event.target.value)}></input>
-        <input type="email" id="email" placeholder="email" onChange={event => setEmailBuyer(event.target.value)}></input>
+        <Input type="text" id="name" placeholder="fullname" onChange={event => setNameBuyer(event.target.value)}/>
+        <Input type="text" id="phone" placeholder="phone" onChange={event => setPhoneBuyer(event.target.value)}/>
+        <Input type="email" id="email" placeholder="email" onChange={event => setEmailBuyer(event.target.value)}/>
       </form>
       <SummaryTitle>ORDER SUMMARY</SummaryTitle>
         <SummaryItem type="total">

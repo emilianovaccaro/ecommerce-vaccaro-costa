@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/FooterHeader/Header';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -15,7 +16,7 @@ function App() {
           <Routes>
             <Route path='/' element={<> <Header title="shop with us" subtitle=":D"/> <ItemListContainer/> </>}/>
             <Route path='/category/:catId' element={<ItemListContainer/>}/>
-            <Route path='/item/:productId' element={<ItemDetailContainer/>}/>
+            <Route path="/item/:productId/:slug" element={<ItemDetailContainer/>}/>
             <Route path='/cart' element={<Cart/>}/>
           </Routes>
         <Footer />

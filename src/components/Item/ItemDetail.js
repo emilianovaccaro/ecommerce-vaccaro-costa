@@ -10,6 +10,8 @@ const ItemDetail = ({ item }) => {
   const [changeBtn, setChangeBtn] = useState(true);
   const prodContext = useContext(CartContext);
 
+  console.log(quantity);
+
   const onAdd = (quantity) => {
     setQuantity(quantity);
     if(quantity > 0){

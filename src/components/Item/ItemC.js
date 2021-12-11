@@ -4,7 +4,7 @@ import { DescriptionOutlined, InfoOutlined, LocalOfferOutlined } from '@material
 import { ProductContainer, Circle, Image, Info, Icon } from './styledComponents';
 
 
-function ItemC({ image, title, stock, price, id }) {
+function ItemC({ image, title, stock, price, id, slug }) {
   return (
     <div>
     <ProductContainer>
@@ -19,7 +19,7 @@ function ItemC({ image, title, stock, price, id }) {
                 <DescriptionOutlined />{stock} available.
             </Icon>
             <Icon style={{cursor: "pointer"}}>
-                <Link to={`/item/${id}`}><InfoOutlined />Details</Link>
+                <Link to={`/item/${id}/${slug}`}><InfoOutlined />Details</Link>
             </Icon>
         </Info>
     </ProductContainer>

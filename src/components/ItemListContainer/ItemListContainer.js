@@ -32,7 +32,7 @@ const ItemListContainer = () => {
       {isLoading === true ? (<div>
         <Center>
           <CircularProgress></CircularProgress>
-          <h2>Cargando desde Fake Store API</h2>
+          <h2>Cargando</h2>
         </Center>
         </div>
       ) 

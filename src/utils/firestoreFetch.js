@@ -3,14 +3,14 @@ import { query, orderBy, where, collection, getDocs } from '@firebase/firestore'
 import { doc, getDoc } from "firebase/firestore";
 
 export const firestoreFetch = async (catId) => {
-  let cate;
+  let q;
   if(catId){
-    cate = query(collection(db, 'product'), where('category', '==', catId));
+    q = query(collection(db, 'product'), where('category', '==', catId));
   } else {
-    cate = query(collection(db, 'product'), orderBy('title'))
+    q = query(collection(db, 'product'), orderBy('title'))
   }
 
-  const querySnapshot = await getDocs(cate);
+  const querySnapshot = await getDocs(q);
   const productosFirestore = querySnapshot.docs.map(docu => ({
     id: docu.id,
     ...docu.data()

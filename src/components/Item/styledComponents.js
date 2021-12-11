@@ -1,64 +1,10 @@
 import styled from "styled-components";
 
-//NavBar
-const Wrapper = styled.div`
-    background-color:orange;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-`;
-
-const Left = styled.div`
-    flex: 1;
-    display: flex;
-    align-items: center;
-`;
-
-const Center = styled.div`
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
-const Logo = styled.h1`
-    font-weight: bold;
-`;
-
-const Right = styled.div`
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-`;
-
-const MenuItem = styled.div`
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: 25px;
-`;
-
-
 //ItemCount
 const ProductAmountContainer = styled.div`
     display: flex;
     align-items: center;
     margin: 20px;
-`;
-
-const ProductAmount = styled.div`
-    font-size: 24px;
-    margin: 5px;
-`;
-
-
-//ItemList
-const ProductsContainer = styled.div`
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 `;
 
 //Item
@@ -164,9 +110,9 @@ const Price  = styled.span`
 `;
 
 export { 
-    Wrapper, Logo, MenuItem, Left, Center, Right, 
-    ProductAmountContainer, ProductAmount, 
-    ProductsContainer, ProductContainer,
-    Circle, Image, Info, Icon,
-    DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Desc, Price
+    ProductContainer, Circle, Image, Info,
+    Icon, DetailContainer, WrapperDetail, 
+    ImgContainer, ProductAmountContainer, 
+    ImageDetail, InfoContainer, 
+    Title, Desc, Price
 }

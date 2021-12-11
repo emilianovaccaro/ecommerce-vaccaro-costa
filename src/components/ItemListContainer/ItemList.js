@@ -7,6 +7,7 @@ function ItemList({items}) {
     <ProductsContainer>
       {items.map(item=> <ItemC title={item.title}
         key={item.id}
+        slug={item.slug}
         id={item.id}
         price={item.price}
         stock={item.stock}
