@@ -20,7 +20,7 @@ _Este proyecto contiene solamente tecnología del lado del cliente._
 
 ## Autor ✒️
 
-* **Emiliano Vaccaro Costa** - *FullStack Web Developer en formación*, 25/06/2021 - [emilianovaccaro](https://github.com/emilianovaccaro)
+* **Emiliano Vaccaro Costa** - *FullStack Web Developer en formación*, 11/12/2021 - [emilianovaccaro](https://github.com/emilianovaccaro)
 
 ## Licencia 📄
 
